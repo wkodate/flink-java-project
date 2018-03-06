@@ -20,9 +20,11 @@ package org.apache.flink.quickstart;
 
 import com.dataartisans.flinktraining.exercises.datastream_java.datatypes.TaxiRide;
 import com.dataartisans.flinktraining.exercises.datastream_java.sources.TaxiRideSource;
+import com.dataartisans.flinktraining.exercises.datastream_java.utils.TaxiRideSchema;
 import org.apache.flink.streaming.api.TimeCharacteristic;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer011;
 
 
 /**
@@ -55,6 +57,12 @@ public class StreamingJob {
         int maxDelay = 1;
         int servingSpeed = 1;
         DataStream<TaxiRide> rides = env.addSource(new TaxiRideSource(sourcePath, maxDelay, servingSpeed));
+        rides.addSink(new FlinkKafkaProducer011<TaxiRide>(
+                        "localhost:9092",
+                        "cleansedRides",
+                        new TaxiRideSchema())
+        );
+
 
         /**
          rides.filter()
