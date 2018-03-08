@@ -1,4 +1,4 @@
-package org.apache.flink.quickstart;
+package org.apache.flink.quickstart.batch;
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -34,7 +34,7 @@ import org.apache.flink.api.java.ExecutionEnvironment;
  * You will find the jar in
  * 		target/flink-java-project-0.1.jar
  * From the CLI you can then run
- * 		./bin/flink run -c org.apache.flink.quickstart.BatchJob target/flink-java-project-0.1.jar
+ * 		./bin/flink run -c org.apache.flink.quickstart.batch.BatchJob target/flink-java-project-0.1.jar
  *
  * <p>For more information on the CLI see:
  *

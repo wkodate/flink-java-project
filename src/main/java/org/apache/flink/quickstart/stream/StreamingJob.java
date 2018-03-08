@@ -1,4 +1,4 @@
-package org.apache.flink.quickstart;
+package org.apache.flink.quickstart.stream;
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -41,7 +41,7 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer011;
  * You will find the jar in
  * target/flink-java-project-0.1.jar
  * From the CLI you can then run
- * ./bin/flink run -c org.apache.flink.quickstart.StreamingJob target/flink-java-project-0.1.jar
+ * ./bin/flink run -c org.apache.flink.quickstart.stream.StreamingJob target/flink-java-project-0.1.jar
  * <p>
  * <p>For more information on the CLI see:
  * <p>
